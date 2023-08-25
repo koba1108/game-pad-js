@@ -1,9 +1,14 @@
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vitest/config';
+import { sveltekit } from '@sveltejs/kit/vite'
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
-	plugins: [sveltekit()],
-	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}']
-	}
-});
+  plugins: [sveltekit()],
+  resolve: {
+    alias: {
+      $stores: './src/stores'
+    }
+  },
+  test: {
+    include: ['src/**/*.{test,spec}.{js,ts}']
+  }
+})
